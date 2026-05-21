@@ -1,0 +1,10 @@
+target/
+.DS_Store
+*.swp
+*.swo
+.venv/
+.idea/
+.vscode/
+
+# Bench artefacts
+criterion/

@@ -1,0 +1,35 @@
+[package]
+name = "plausiden-hdc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Hyperdimensional Computing primitives — 10K-dim bipolar hypervectors + bind/bundle/unbind/permute/cosine-sim"
+
+[dependencies]
+serde = { workspace = true, features = ["derive"] }
+thiserror.workspace = true
+rustfft.workspace = true
+rand.workspace = true
+rand_chacha.workspace = true
+rayon.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+criterion.workspace = true
+
+[[bench]]
+name = "hdc_ops"
+harness = false
+
+[lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[lints.clippy]
+unwrap_used = "warn"
+expect_used = "warn"
+panic = "warn"
+todo = "warn"
