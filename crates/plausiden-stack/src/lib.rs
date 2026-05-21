@@ -18,10 +18,12 @@
 
 pub mod gated;
 pub mod op;
+pub mod sos;
 pub mod stack;
 
 pub use gated::{GatedError, GatedStack};
 pub use op::{Operation, OperationError};
+pub use sos::{SosError, StackOfStacks, Substructure};
 pub use stack::{Stack, StackError};
 
 /// Returns a banner describing the crate state.
