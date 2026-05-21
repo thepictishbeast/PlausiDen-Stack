@@ -16,9 +16,11 @@
 #![forbid(unsafe_code)]
 #![cfg_attr(test, allow(clippy::expect_used, clippy::unwrap_used))]
 
+pub mod gated;
 pub mod op;
 pub mod stack;
 
+pub use gated::{GatedError, GatedStack};
 pub use op::{Operation, OperationError};
 pub use stack::{Stack, StackError};
 
