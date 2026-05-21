@@ -63,6 +63,23 @@ impl Stack {
         self
     }
 
+    /// Insert `op` at `index`, shifting later ops back. Panics if
+    /// `index > self.len()`.
+    pub fn insert_operation(&mut self, index: usize, op: Operation) {
+        self.operations.insert(index, op);
+    }
+
+    /// Remove and return the op at `index`. Panics if `index >= self.len()`.
+    pub fn remove_operation(&mut self, index: usize) -> Operation {
+        self.operations.remove(index)
+    }
+
+    /// Replace the op at `index`, returning the previous occupant. Panics
+    /// if `index >= self.len()`.
+    pub fn replace_operation(&mut self, index: usize, op: Operation) -> Operation {
+        std::mem::replace(&mut self.operations[index], op)
+    }
+
     /// Returns the Stack's dimensionality.
     #[must_use]
     pub fn dim(&self) -> usize {

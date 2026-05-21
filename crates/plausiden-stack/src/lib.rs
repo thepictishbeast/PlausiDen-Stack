@@ -18,12 +18,14 @@
 
 pub mod entropy;
 pub mod gated;
+pub mod meta;
 pub mod op;
 pub mod sos;
 pub mod stack;
 
 pub use entropy::{NoisyError, NoisyStack};
 pub use gated::{GatedError, GatedStack};
+pub use meta::{MetaController, MetaError};
 pub use op::{Operation, OperationError};
 pub use sos::{SosError, StackOfStacks, Substructure};
 pub use stack::{Stack, StackError};
