@@ -16,11 +16,13 @@
 #![forbid(unsafe_code)]
 #![cfg_attr(test, allow(clippy::expect_used, clippy::unwrap_used))]
 
+pub mod entropy;
 pub mod gated;
 pub mod op;
 pub mod sos;
 pub mod stack;
 
+pub use entropy::{NoisyError, NoisyStack};
 pub use gated::{GatedError, GatedStack};
 pub use op::{Operation, OperationError};
 pub use sos::{SosError, StackOfStacks, Substructure};
